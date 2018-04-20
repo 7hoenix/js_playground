@@ -4,15 +4,23 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    index: ["./src/index.js"]
+    earthquake: "./src/earthquake/index.js",
+    invader: "./src/invader/index.js"
   },
 
   output: {
-    filename: "main.bundle.js",
-    path: path.resolve(__dirname, "../public/js")
+    filename: "[name]/main.bundle.js",
+    path: path.resolve(__dirname, "../public")
   },
 
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: "earthquake/index.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "invader/index.html"
+    })
+  ],
 
   module: {
     rules: [
