@@ -4,12 +4,12 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    index: ["babel-polyfill", "./src/index.js"]
+    index: ["./src/index.js"]
   },
 
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
+    filename: "main.bundle.js",
+    path: path.resolve(__dirname, "../public/js")
   },
 
   plugins: [new HtmlWebpackPlugin()],
